@@ -33,10 +33,7 @@ sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible -y
 #Add docker to sudo group
 echo "--------------------Add Docker to Sudo group--------------------"
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
-sudo chmod 777 /var/run/docker.sock
+sudo groupadd docker && sudo usermod -aG docker $USER && newgrp docker && sudo chmod 777 /var/run/docker.sock
 #Show Jenkins Password
 echo "--------------------Jenkins Password--------------------"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
